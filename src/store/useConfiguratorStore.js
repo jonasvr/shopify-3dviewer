@@ -4,7 +4,7 @@ const useConfiguratorStore = create((set) => ({
     colors: {
         base: '#56B7E6',
         black: '#56B7E6',
-        white: '#CBC6B8',
+        white: '#ebeae6ff',
     },
     modelPosition: [0, 0, 0],
     setPartColor: (part, color) => set((state) => ({

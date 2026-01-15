@@ -2,7 +2,7 @@ import { useState } from 'react'
 import useConfiguratorStore from '../store/useConfiguratorStore'
 
 const allColors = [
-    { name: 'Bone White', value: '#CBC6B8' },
+    { name: 'Bone White', value: '#ebeae6ff' },
     { name: 'Desert Tan', value: '#E8DBB7' },
     { name: 'Latte Brown', value: '#D3B7A7' },
     { name: 'Caramel', value: '#AE835B' },
@@ -155,7 +155,6 @@ export default function UIInterface() {
 
                 {/* Part Selection (Tabs) */}
                 <div style={styles.section}>
-                    <label style={styles.label}>Select Part</label>
                     <div style={styles.tabsContainer}>
                         {parts.map((part) => (
                             <button
@@ -171,10 +170,6 @@ export default function UIInterface() {
 
                 {/* Color Selection (Flattened) */}
                 <div style={{ ...styles.section, marginTop: '1rem' }}>
-                    <label style={styles.label}>
-                        Select Color for <span style={{ fontWeight: 'bold', color: '#111827' }}>{parts.find(p => p.id === activePart).label}</span>
-                    </label>
-
                     <div style={styles.colorContainer}>
                         {allColors.map((c) => (
                             <button

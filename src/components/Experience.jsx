@@ -24,11 +24,6 @@ export default function Experience() {
                 enableZoom={true}
                 minDistance={2}
                 maxDistance={50}
-                onChange={(e) => {
-                    const cam = e.target.object.position
-                    const target = e.target.target
-                    console.log(`View Config:\nCamera Position: [${cam.x.toFixed(2)}, ${cam.y.toFixed(2)}, ${cam.z.toFixed(2)}]\nTarget (Pan): [${target.x.toFixed(2)}, ${target.y.toFixed(2)}, ${target.z.toFixed(2)}]`)
-                }}
             />
         </Canvas>
     )
