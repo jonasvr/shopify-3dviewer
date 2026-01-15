@@ -1,0 +1,69 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+/* Canvas Container */
+.canvas-wrapper {
+  width: 100%;
+  max-width: 1500px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  max-height: 750px;
+  position: relative;
+  background-color: #e5e5e5;
+  margin: 0 auto;
+  /* Center on mobile */
+}
+
+/* UI Container */
+.ui-wrapper {
+  width: 100%;
+  flex: 1;
+  background-color: white;
+  min-height: auto;
+  /* Fit to content */
+}
+
+/* Desktop Switch (> 750px) */
+@media (min-width: 750px) {
+  .app-container {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    /* Center the row horizontally */
+  }
+
+  .canvas-wrapper {
+    margin: 0;
+    width: auto;
+    /* Allow it to shrink/grow */
+    flex: 2;
+    /* 2/3 of space */
+    max-width: 1500px;
+  }
+
+  .ui-wrapper {
+    height: auto;
+    /* Let flex-stretch handle it */
+    max-height: 750px;
+    /* Match canvas cap */
+    overflow-y: auto;
+    border-left: 1px solid #e5e7eb;
+    flex: 1;
+    /* 1/3 of space */
+    min-width: 300px;
+  }
+}
