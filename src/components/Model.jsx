@@ -6,8 +6,9 @@ import * as THREE from 'three'
 import useConfiguratorStore from '../store/useConfiguratorStore'
 
 export default function Model(props) {
-    // Load the OBJ file
-    const obj = useLoader(OBJLoader, '/model.obj')
+    // Load the OBJ file from Shopify asset URL if available, otherwise local public folder
+    const modelUrl = window.shopifyModelUrl || '/model.obj'
+    const obj = useLoader(OBJLoader, modelUrl)
 
     // Get state from store
     const { colors, modelPosition } = useConfiguratorStore()
